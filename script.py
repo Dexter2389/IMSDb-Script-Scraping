@@ -29,7 +29,6 @@ import re
 import os
 import sys
 import codecs
-from tqdm import tqdm
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -192,7 +191,10 @@ if __name__ == '__main__':
     browser = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
     for i,movie in enumerate(movies):
         handle_movie(movie, browser)
-        tqdm(i)
+        print("----------------------")
+        print(movie)
+        print("----------------------")
+        print("\n")
 
 '''comments on the scraping results
 movies that were not scraped successfully:
